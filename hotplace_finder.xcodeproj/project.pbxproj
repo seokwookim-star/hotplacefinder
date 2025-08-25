@@ -1,0 +1,991 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 56;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		10184F302DCCED6900567CD8 /* startAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10184F2F2DCCED6900567CD8 /* startAnimation.swift */; };
+		10184F322DCCF24800567CD8 /* loading.json in Resources */ = {isa = PBXBuildFile; fileRef = 10184F312DCCF24800567CD8 /* loading.json */; };
+		105520432DB4A7FC001807E7 /* hotplace_struct.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105520422DB4A7FC001807E7 /* hotplace_struct.swift */; };
+		105520452DB4A884001807E7 /* hotplace_import_firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 105520442DB4A884001807E7 /* hotplace_import_firebase.swift */; };
+		105520492DB535E7001807E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 105520482DB535E7001807E7 /* GoogleService-Info.plist */; };
+		1055204A2DB535E7001807E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 105520482DB535E7001807E7 /* GoogleService-Info.plist */; };
+		1055204B2DB535E7001807E7 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 105520482DB535E7001807E7 /* GoogleService-Info.plist */; };
+		1055204D2DBB8DC0001807E7 /* imagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1055204C2DBB8DC0001807E7 /* imagePicker.swift */; };
+		106B49482DF5D92C00970509 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 106B49472DF5D92C00970509 /* GoogleMobileAds */; };
+		106B494A2DF6F8F600970509 /* AppleLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B49492DF6F8F600970509 /* AppleLoginButton.swift */; };
+		1083838A2E5CACBE000FBC0B /* MultiImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108383892E5CACBE000FBC0B /* MultiImagePicker.swift */; };
+		1088C0B72DDF71D600E6D798 /* BannerAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1088C0B62DDF703400E6D798 /* BannerAdView.swift */; };
+		1088C0B92DE4B83F00E6D798 /* ZoomableImageView .swift in Sources */ = {isa = PBXBuildFile; fileRef = 1088C0B82DE4B80600E6D798 /* ZoomableImageView .swift */; };
+		1088C0BB2DE4BC9900E6D798 /* FullScreenImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1088C0BA2DE4BC9900E6D798 /* FullScreenImageView.swift */; };
+		1088C0BD2DE5F15500E6D798 /* mainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1088C0BC2DE5F11600E6D798 /* mainTabView.swift */; };
+		1088C0BF2DE5F2F700E6D798 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1088C0BE2DE5F2F700E6D798 /* LoginView.swift */; };
+		1088C0C22DE5F5AC00E6D798 /* KakaoSDK in Frameworks */ = {isa = PBXBuildFile; productRef = 1088C0C12DE5F5AC00E6D798 /* KakaoSDK */; };
+		1088C0C42DE5F5AC00E6D798 /* KakaoSDKAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 1088C0C32DE5F5AC00E6D798 /* KakaoSDKAuth */; };
+		1088C0C62DE5F5AC00E6D798 /* KakaoSDKCert in Frameworks */ = {isa = PBXBuildFile; productRef = 1088C0C52DE5F5AC00E6D798 /* KakaoSDKCert */; };
+		1088C0C82DE5F5AC00E6D798 /* KakaoSDKCertCore in Frameworks */ = {isa = PBXBuildFile; productRef = 1088C0C72DE5F5AC00E6D798 /* KakaoSDKCertCore */; };
+		1088C0CA2DE5F5AC00E6D798 /* KakaoSDKCommon in Frameworks */ = {isa = PBXBuildFile; productRef = 1088C0C92DE5F5AC00E6D798 /* KakaoSDKCommon */; };
+		1088C0CC2DE5FDCB00E6D798 /* NaverLoginManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1088C0CB2DE5FDCB00E6D798 /* NaverLoginManager.swift */; };
+		1088C0CE2DE5FE9400E6D798 /* NaverLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1088C0CD2DE5FE9400E6D798 /* NaverLoginView.swift */; };
+		1088C0D02DE5FFF700E6D798 /* KakaoLoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1088C0CF2DE5FFF700E6D798 /* KakaoLoginView.swift */; };
+		1088C0D22DE6013000E6D798 /* NaverLoginCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1088C0D12DE6013000E6D798 /* NaverLoginCoordinator.swift */; };
+		1088C0D42DE7263F00E6D798 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1088C0D32DE7263F00E6D798 /* AppDelegate.swift */; };
+		109F2F552E097010004DE6C9 /* AccountDeleteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109F2F542E097010004DE6C9 /* AccountDeleteView.swift */; };
+		109F2F572E0D8688004DE6C9 /* testADview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109F2F562E0D8688004DE6C9 /* testADview.swift */; };
+		109F2F592E169D89004DE6C9 /* loadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109F2F582E169D89004DE6C9 /* loadingView.swift */; };
+		109F2F5B2E169F95004DE6C9 /* searchBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109F2F5A2E169F95004DE6C9 /* searchBarView.swift */; };
+		109F2F5D2E16A658004DE6C9 /* imagePopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 109F2F5C2E16A658004DE6C9 /* imagePopupView.swift */; };
+		10CD52F22DB131E600F72289 /* hotplace_finderApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CD52F12DB131E600F72289 /* hotplace_finderApp.swift */; };
+		10CD52F42DB131E600F72289 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CD52F32DB131E600F72289 /* ContentView.swift */; };
+		10CD52F82DB131E700F72289 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10CD52F72DB131E700F72289 /* Assets.xcassets */; };
+		10CD52FB2DB131E700F72289 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 10CD52FA2DB131E700F72289 /* Preview Assets.xcassets */; };
+		10CD53052DB131E800F72289 /* hotplace_finderTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CD53042DB131E800F72289 /* hotplace_finderTests.swift */; };
+		10CD530F2DB131E800F72289 /* hotplace_finderUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CD530E2DB131E800F72289 /* hotplace_finderUITests.swift */; };
+		10CD53112DB131E800F72289 /* hotplace_finderUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CD53102DB131E800F72289 /* hotplace_finderUITestsLaunchTests.swift */; };
+		10CD53212DB14B6600F72289 /* naverMapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10CD53202DB14B6600F72289 /* naverMapView.swift */; };
+		10D6CB5A2E234A68006E8C63 /* datePickerSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D6CB592E234A68006E8C63 /* datePickerSection.swift */; };
+		10D6CB5C2E2CC7EA006E8C63 /* ReportPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 10D6CB5B2E2CC7EA006E8C63 /* ReportPopupView.swift */; };
+		5ED56A70B90DF72AB2C90685 /* Pods_hotplace_finder.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C728B6CB8DD7C12B2A9D5C93 /* Pods_hotplace_finder.framework */; };
+		7FE74F88513BC30E97D2ED16 /* Pods_hotplace_finderTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E907109A10AFAE812586621A /* Pods_hotplace_finderTests.framework */; };
+		8BE45A2907F900EAB04A49C2 /* Pods_hotplace_finder_hotplace_finderUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04A5CD3034EEC3B3FE3C8765 /* Pods_hotplace_finder_hotplace_finderUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		10CD53012DB131E800F72289 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10CD52E62DB131E600F72289 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 10CD52ED2DB131E600F72289;
+			remoteInfo = hotplace_finder;
+		};
+		10CD530B2DB131E800F72289 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 10CD52E62DB131E600F72289 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 10CD52ED2DB131E600F72289;
+			remoteInfo = hotplace_finder;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		04A5CD3034EEC3B3FE3C8765 /* Pods_hotplace_finder_hotplace_finderUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hotplace_finder_hotplace_finderUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		10184F2F2DCCED6900567CD8 /* startAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = startAnimation.swift; sourceTree = "<group>"; };
+		10184F312DCCF24800567CD8 /* loading.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = loading.json; sourceTree = "<group>"; };
+		105520422DB4A7FC001807E7 /* hotplace_struct.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hotplace_struct.swift; sourceTree = "<group>"; };
+		105520442DB4A884001807E7 /* hotplace_import_firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hotplace_import_firebase.swift; sourceTree = "<group>"; };
+		105520482DB535E7001807E7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		1055204C2DBB8DC0001807E7 /* imagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imagePicker.swift; sourceTree = "<group>"; };
+		106B49492DF6F8F600970509 /* AppleLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginButton.swift; sourceTree = "<group>"; };
+		106B494D2DF6FD0400970509 /* hotplace_finder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = hotplace_finder.entitlements; sourceTree = "<group>"; };
+		108383892E5CACBE000FBC0B /* MultiImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiImagePicker.swift; sourceTree = "<group>"; };
+		1088C0B62DDF703400E6D798 /* BannerAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAdView.swift; sourceTree = "<group>"; };
+		1088C0B82DE4B80600E6D798 /* ZoomableImageView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ZoomableImageView .swift"; sourceTree = "<group>"; };
+		1088C0BA2DE4BC9900E6D798 /* FullScreenImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenImageView.swift; sourceTree = "<group>"; };
+		1088C0BC2DE5F11600E6D798 /* mainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mainTabView.swift; sourceTree = "<group>"; };
+		1088C0BE2DE5F2F700E6D798 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		1088C0CB2DE5FDCB00E6D798 /* NaverLoginManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverLoginManager.swift; sourceTree = "<group>"; };
+		1088C0CD2DE5FE9400E6D798 /* NaverLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverLoginView.swift; sourceTree = "<group>"; };
+		1088C0CF2DE5FFF700E6D798 /* KakaoLoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KakaoLoginView.swift; sourceTree = "<group>"; };
+		1088C0D12DE6013000E6D798 /* NaverLoginCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NaverLoginCoordinator.swift; sourceTree = "<group>"; };
+		1088C0D32DE7263F00E6D798 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		109F2F542E097010004DE6C9 /* AccountDeleteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountDeleteView.swift; sourceTree = "<group>"; };
+		109F2F562E0D8688004DE6C9 /* testADview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = testADview.swift; sourceTree = "<group>"; };
+		109F2F582E169D89004DE6C9 /* loadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = loadingView.swift; sourceTree = "<group>"; };
+		109F2F5A2E169F95004DE6C9 /* searchBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = searchBarView.swift; sourceTree = "<group>"; };
+		109F2F5C2E16A658004DE6C9 /* imagePopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = imagePopupView.swift; sourceTree = "<group>"; };
+		10CD52EE2DB131E600F72289 /* hotplace_finder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = hotplace_finder.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		10CD52F12DB131E600F72289 /* hotplace_finderApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hotplace_finderApp.swift; sourceTree = "<group>"; };
+		10CD52F32DB131E600F72289 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		10CD52F72DB131E700F72289 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		10CD52FA2DB131E700F72289 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		10CD53002DB131E800F72289 /* hotplace_finderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hotplace_finderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		10CD53042DB131E800F72289 /* hotplace_finderTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hotplace_finderTests.swift; sourceTree = "<group>"; };
+		10CD530A2DB131E800F72289 /* hotplace_finderUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = hotplace_finderUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		10CD530E2DB131E800F72289 /* hotplace_finderUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hotplace_finderUITests.swift; sourceTree = "<group>"; };
+		10CD53102DB131E800F72289 /* hotplace_finderUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = hotplace_finderUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		10CD531F2DB1449B00F72289 /* hotplace-finder-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "hotplace-finder-Info.plist"; sourceTree = SOURCE_ROOT; };
+		10CD53202DB14B6600F72289 /* naverMapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = naverMapView.swift; sourceTree = "<group>"; };
+		10D6CB592E234A68006E8C63 /* datePickerSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = datePickerSection.swift; sourceTree = "<group>"; };
+		10D6CB5B2E2CC7EA006E8C63 /* ReportPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReportPopupView.swift; sourceTree = "<group>"; };
+		31BD2F9B392ADCADEE76D6B1 /* Pods-hotplace_finder-hotplace_finderUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hotplace_finder-hotplace_finderUITests.debug.xcconfig"; path = "Target Support Files/Pods-hotplace_finder-hotplace_finderUITests/Pods-hotplace_finder-hotplace_finderUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		6FE869111580041291F676C6 /* Pods-hotplace_finderTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hotplace_finderTests.release.xcconfig"; path = "Target Support Files/Pods-hotplace_finderTests/Pods-hotplace_finderTests.release.xcconfig"; sourceTree = "<group>"; };
+		8E28887541808CD4363ED8B3 /* Pods-hotplace_finder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hotplace_finder.debug.xcconfig"; path = "Target Support Files/Pods-hotplace_finder/Pods-hotplace_finder.debug.xcconfig"; sourceTree = "<group>"; };
+		9543038053B1D87A6184639D /* Pods-hotplace_finderTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hotplace_finderTests.debug.xcconfig"; path = "Target Support Files/Pods-hotplace_finderTests/Pods-hotplace_finderTests.debug.xcconfig"; sourceTree = "<group>"; };
+		B13A076D41063D915FC06420 /* Pods-hotplace_finder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hotplace_finder.release.xcconfig"; path = "Target Support Files/Pods-hotplace_finder/Pods-hotplace_finder.release.xcconfig"; sourceTree = "<group>"; };
+		C0EDBA0CE565106DEFF0C377 /* Pods-hotplace_finder-hotplace_finderUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-hotplace_finder-hotplace_finderUITests.release.xcconfig"; path = "Target Support Files/Pods-hotplace_finder-hotplace_finderUITests/Pods-hotplace_finder-hotplace_finderUITests.release.xcconfig"; sourceTree = "<group>"; };
+		C728B6CB8DD7C12B2A9D5C93 /* Pods_hotplace_finder.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hotplace_finder.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E907109A10AFAE812586621A /* Pods_hotplace_finderTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_hotplace_finderTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		10CD52EB2DB131E600F72289 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5ED56A70B90DF72AB2C90685 /* Pods_hotplace_finder.framework in Frameworks */,
+				1088C0C22DE5F5AC00E6D798 /* KakaoSDK in Frameworks */,
+				1088C0C82DE5F5AC00E6D798 /* KakaoSDKCertCore in Frameworks */,
+				1088C0C42DE5F5AC00E6D798 /* KakaoSDKAuth in Frameworks */,
+				1088C0CA2DE5F5AC00E6D798 /* KakaoSDKCommon in Frameworks */,
+				1088C0C62DE5F5AC00E6D798 /* KakaoSDKCert in Frameworks */,
+				106B49482DF5D92C00970509 /* GoogleMobileAds in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10CD52FD2DB131E800F72289 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7FE74F88513BC30E97D2ED16 /* Pods_hotplace_finderTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10CD53072DB131E800F72289 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8BE45A2907F900EAB04A49C2 /* Pods_hotplace_finder_hotplace_finderUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		10CD52E52DB131E600F72289 = {
+			isa = PBXGroup;
+			children = (
+				10CD52F02DB131E600F72289 /* hotplace_finder */,
+				10CD53032DB131E800F72289 /* hotplace_finderTests */,
+				10CD530D2DB131E800F72289 /* hotplace_finderUITests */,
+				10CD52EF2DB131E600F72289 /* Products */,
+				2C821D0C553BF3D218AF7112 /* Pods */,
+				FC25F979CA29F74AA3352879 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		10CD52EF2DB131E600F72289 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				10CD52EE2DB131E600F72289 /* hotplace_finder.app */,
+				10CD53002DB131E800F72289 /* hotplace_finderTests.xctest */,
+				10CD530A2DB131E800F72289 /* hotplace_finderUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		10CD52F02DB131E600F72289 /* hotplace_finder */ = {
+			isa = PBXGroup;
+			children = (
+				106B494D2DF6FD0400970509 /* hotplace_finder.entitlements */,
+				10CD531F2DB1449B00F72289 /* hotplace-finder-Info.plist */,
+				108383892E5CACBE000FBC0B /* MultiImagePicker.swift */,
+				10184F312DCCF24800567CD8 /* loading.json */,
+				10CD52F12DB131E600F72289 /* hotplace_finderApp.swift */,
+				1088C0BC2DE5F11600E6D798 /* mainTabView.swift */,
+				1088C0D32DE7263F00E6D798 /* AppDelegate.swift */,
+				1088C0BE2DE5F2F700E6D798 /* LoginView.swift */,
+				109F2F562E0D8688004DE6C9 /* testADview.swift */,
+				1088C0CB2DE5FDCB00E6D798 /* NaverLoginManager.swift */,
+				1088C0CD2DE5FE9400E6D798 /* NaverLoginView.swift */,
+				106B49492DF6F8F600970509 /* AppleLoginButton.swift */,
+				109F2F542E097010004DE6C9 /* AccountDeleteView.swift */,
+				1088C0D12DE6013000E6D798 /* NaverLoginCoordinator.swift */,
+				1088C0CF2DE5FFF700E6D798 /* KakaoLoginView.swift */,
+				1088C0B62DDF703400E6D798 /* BannerAdView.swift */,
+				1088C0B82DE4B80600E6D798 /* ZoomableImageView .swift */,
+				1088C0BA2DE4BC9900E6D798 /* FullScreenImageView.swift */,
+				10184F2F2DCCED6900567CD8 /* startAnimation.swift */,
+				109F2F582E169D89004DE6C9 /* loadingView.swift */,
+				109F2F5A2E169F95004DE6C9 /* searchBarView.swift */,
+				10D6CB5B2E2CC7EA006E8C63 /* ReportPopupView.swift */,
+				109F2F5C2E16A658004DE6C9 /* imagePopupView.swift */,
+				10D6CB592E234A68006E8C63 /* datePickerSection.swift */,
+				10CD52F32DB131E600F72289 /* ContentView.swift */,
+				105520442DB4A884001807E7 /* hotplace_import_firebase.swift */,
+				10CD53202DB14B6600F72289 /* naverMapView.swift */,
+				105520422DB4A7FC001807E7 /* hotplace_struct.swift */,
+				1055204C2DBB8DC0001807E7 /* imagePicker.swift */,
+				105520482DB535E7001807E7 /* GoogleService-Info.plist */,
+				10CD52F72DB131E700F72289 /* Assets.xcassets */,
+				10CD52F92DB131E700F72289 /* Preview Content */,
+			);
+			path = hotplace_finder;
+			sourceTree = "<group>";
+		};
+		10CD52F92DB131E700F72289 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				10CD52FA2DB131E700F72289 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		10CD53032DB131E800F72289 /* hotplace_finderTests */ = {
+			isa = PBXGroup;
+			children = (
+				10CD53042DB131E800F72289 /* hotplace_finderTests.swift */,
+			);
+			path = hotplace_finderTests;
+			sourceTree = "<group>";
+		};
+		10CD530D2DB131E800F72289 /* hotplace_finderUITests */ = {
+			isa = PBXGroup;
+			children = (
+				10CD530E2DB131E800F72289 /* hotplace_finderUITests.swift */,
+				10CD53102DB131E800F72289 /* hotplace_finderUITestsLaunchTests.swift */,
+			);
+			path = hotplace_finderUITests;
+			sourceTree = "<group>";
+		};
+		2C821D0C553BF3D218AF7112 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				8E28887541808CD4363ED8B3 /* Pods-hotplace_finder.debug.xcconfig */,
+				B13A076D41063D915FC06420 /* Pods-hotplace_finder.release.xcconfig */,
+				31BD2F9B392ADCADEE76D6B1 /* Pods-hotplace_finder-hotplace_finderUITests.debug.xcconfig */,
+				C0EDBA0CE565106DEFF0C377 /* Pods-hotplace_finder-hotplace_finderUITests.release.xcconfig */,
+				9543038053B1D87A6184639D /* Pods-hotplace_finderTests.debug.xcconfig */,
+				6FE869111580041291F676C6 /* Pods-hotplace_finderTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		FC25F979CA29F74AA3352879 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C728B6CB8DD7C12B2A9D5C93 /* Pods_hotplace_finder.framework */,
+				04A5CD3034EEC3B3FE3C8765 /* Pods_hotplace_finder_hotplace_finderUITests.framework */,
+				E907109A10AFAE812586621A /* Pods_hotplace_finderTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		10CD52ED2DB131E600F72289 /* hotplace_finder */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10CD53142DB131E800F72289 /* Build configuration list for PBXNativeTarget "hotplace_finder" */;
+			buildPhases = (
+				EF95BA6D27F512E285F0B788 /* [CP] Check Pods Manifest.lock */,
+				10CD52EA2DB131E600F72289 /* Sources */,
+				10CD52EB2DB131E600F72289 /* Frameworks */,
+				10CD52EC2DB131E600F72289 /* Resources */,
+				F2ABD10CE925AC09B2A7EAAE /* [CP] Embed Pods Frameworks */,
+				DBEFD33FA9951BD03CBDA2FD /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = hotplace_finder;
+			productName = hotplace_finder;
+			productReference = 10CD52EE2DB131E600F72289 /* hotplace_finder.app */;
+			productType = "com.apple.product-type.application";
+		};
+		10CD52FF2DB131E800F72289 /* hotplace_finderTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10CD53172DB131E800F72289 /* Build configuration list for PBXNativeTarget "hotplace_finderTests" */;
+			buildPhases = (
+				E1329F00863D01EC4C33CFA9 /* [CP] Check Pods Manifest.lock */,
+				10CD52FC2DB131E800F72289 /* Sources */,
+				10CD52FD2DB131E800F72289 /* Frameworks */,
+				10CD52FE2DB131E800F72289 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				10CD53022DB131E800F72289 /* PBXTargetDependency */,
+			);
+			name = hotplace_finderTests;
+			productName = hotplace_finderTests;
+			productReference = 10CD53002DB131E800F72289 /* hotplace_finderTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		10CD53092DB131E800F72289 /* hotplace_finderUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 10CD531A2DB131E800F72289 /* Build configuration list for PBXNativeTarget "hotplace_finderUITests" */;
+			buildPhases = (
+				6A06DF3EE5CFB4BDE47752FB /* [CP] Check Pods Manifest.lock */,
+				10CD53062DB131E800F72289 /* Sources */,
+				10CD53072DB131E800F72289 /* Frameworks */,
+				10CD53082DB131E800F72289 /* Resources */,
+				922FE279D7476999E5A0EBF8 /* [CP] Embed Pods Frameworks */,
+				08808A8EA4B98314A70F2F7B /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				10CD530C2DB131E800F72289 /* PBXTargetDependency */,
+			);
+			name = hotplace_finderUITests;
+			productName = hotplace_finderUITests;
+			productReference = 10CD530A2DB131E800F72289 /* hotplace_finderUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		10CD52E62DB131E600F72289 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1540;
+				LastUpgradeCheck = 1540;
+				TargetAttributes = {
+					10CD52ED2DB131E600F72289 = {
+						CreatedOnToolsVersion = 15.4;
+					};
+					10CD52FF2DB131E800F72289 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 10CD52ED2DB131E600F72289;
+					};
+					10CD53092DB131E800F72289 = {
+						CreatedOnToolsVersion = 15.4;
+						TestTargetID = 10CD52ED2DB131E600F72289;
+					};
+				};
+			};
+			buildConfigurationList = 10CD52E92DB131E600F72289 /* Build configuration list for PBXProject "hotplace_finder" */;
+			compatibilityVersion = "Xcode 14.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 10CD52E52DB131E600F72289;
+			packageReferences = (
+				1088C0C02DE5F5AC00E6D798 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */,
+				106B49462DF5D92C00970509 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */,
+			);
+			productRefGroup = 10CD52EF2DB131E600F72289 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				10CD52ED2DB131E600F72289 /* hotplace_finder */,
+				10CD52FF2DB131E800F72289 /* hotplace_finderTests */,
+				10CD53092DB131E800F72289 /* hotplace_finderUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		10CD52EC2DB131E600F72289 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10CD52FB2DB131E700F72289 /* Preview Assets.xcassets in Resources */,
+				10CD52F82DB131E700F72289 /* Assets.xcassets in Resources */,
+				10184F322DCCF24800567CD8 /* loading.json in Resources */,
+				105520492DB535E7001807E7 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10CD52FE2DB131E800F72289 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1055204A2DB535E7001807E7 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10CD53082DB131E800F72289 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1055204B2DB535E7001807E7 /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		08808A8EA4B98314A70F2F7B /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hotplace_finder-hotplace_finderUITests/Pods-hotplace_finder-hotplace_finderUITests-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hotplace_finder-hotplace_finderUITests/Pods-hotplace_finder-hotplace_finderUITests-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hotplace_finder-hotplace_finderUITests/Pods-hotplace_finder-hotplace_finderUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A06DF3EE5CFB4BDE47752FB /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hotplace_finder-hotplace_finderUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		922FE279D7476999E5A0EBF8 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hotplace_finder-hotplace_finderUITests/Pods-hotplace_finder-hotplace_finderUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hotplace_finder-hotplace_finderUITests/Pods-hotplace_finder-hotplace_finderUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hotplace_finder-hotplace_finderUITests/Pods-hotplace_finder-hotplace_finderUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DBEFD33FA9951BD03CBDA2FD /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hotplace_finder/Pods-hotplace_finder-resources-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hotplace_finder/Pods-hotplace_finder-resources-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hotplace_finder/Pods-hotplace_finder-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		E1329F00863D01EC4C33CFA9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hotplace_finderTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EF95BA6D27F512E285F0B788 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-hotplace_finder-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2ABD10CE925AC09B2A7EAAE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hotplace_finder/Pods-hotplace_finder-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-hotplace_finder/Pods-hotplace_finder-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-hotplace_finder/Pods-hotplace_finder-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		10CD52EA2DB131E600F72289 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10D6CB5A2E234A68006E8C63 /* datePickerSection.swift in Sources */,
+				1088C0CE2DE5FE9400E6D798 /* NaverLoginView.swift in Sources */,
+				10CD53212DB14B6600F72289 /* naverMapView.swift in Sources */,
+				1088C0CC2DE5FDCB00E6D798 /* NaverLoginManager.swift in Sources */,
+				1088C0D22DE6013000E6D798 /* NaverLoginCoordinator.swift in Sources */,
+				10D6CB5C2E2CC7EA006E8C63 /* ReportPopupView.swift in Sources */,
+				1088C0B92DE4B83F00E6D798 /* ZoomableImageView .swift in Sources */,
+				109F2F5B2E169F95004DE6C9 /* searchBarView.swift in Sources */,
+				1055204D2DBB8DC0001807E7 /* imagePicker.swift in Sources */,
+				109F2F5D2E16A658004DE6C9 /* imagePopupView.swift in Sources */,
+				10CD52F42DB131E600F72289 /* ContentView.swift in Sources */,
+				1088C0D02DE5FFF700E6D798 /* KakaoLoginView.swift in Sources */,
+				1088C0BD2DE5F15500E6D798 /* mainTabView.swift in Sources */,
+				1083838A2E5CACBE000FBC0B /* MultiImagePicker.swift in Sources */,
+				109F2F552E097010004DE6C9 /* AccountDeleteView.swift in Sources */,
+				106B494A2DF6F8F600970509 /* AppleLoginButton.swift in Sources */,
+				1088C0B72DDF71D600E6D798 /* BannerAdView.swift in Sources */,
+				105520432DB4A7FC001807E7 /* hotplace_struct.swift in Sources */,
+				10184F302DCCED6900567CD8 /* startAnimation.swift in Sources */,
+				109F2F572E0D8688004DE6C9 /* testADview.swift in Sources */,
+				105520452DB4A884001807E7 /* hotplace_import_firebase.swift in Sources */,
+				109F2F592E169D89004DE6C9 /* loadingView.swift in Sources */,
+				1088C0BB2DE4BC9900E6D798 /* FullScreenImageView.swift in Sources */,
+				10CD52F22DB131E600F72289 /* hotplace_finderApp.swift in Sources */,
+				1088C0BF2DE5F2F700E6D798 /* LoginView.swift in Sources */,
+				1088C0D42DE7263F00E6D798 /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10CD52FC2DB131E800F72289 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10CD53052DB131E800F72289 /* hotplace_finderTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		10CD53062DB131E800F72289 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				10CD53112DB131E800F72289 /* hotplace_finderUITestsLaunchTests.swift in Sources */,
+				10CD530F2DB131E800F72289 /* hotplace_finderUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		10CD53022DB131E800F72289 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 10CD52ED2DB131E600F72289 /* hotplace_finder */;
+			targetProxy = 10CD53012DB131E800F72289 /* PBXContainerItemProxy */;
+		};
+		10CD530C2DB131E800F72289 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 10CD52ED2DB131E600F72289 /* hotplace_finder */;
+			targetProxy = 10CD530B2DB131E800F72289 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		10CD53122DB131E800F72289 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		10CD53132DB131E800F72289 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		10CD53152DB131E800F72289 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E28887541808CD4363ED8B3 /* Pods-hotplace_finder.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = hotplace_finder/hotplace_finder.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"hotplace_finder/Preview Content\"";
+				DEVELOPMENT_TEAM = 5BAWUQG2ZH;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "hotplace-finder-Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "사용 시 위치 정보 허용";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "항상 위치 정보 허용";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "automobilist.hotplace-finder";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		10CD53162DB131E800F72289 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B13A076D41063D915FC06420 /* Pods-hotplace_finder.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
+				CODE_SIGN_ENTITLEMENTS = hotplace_finder/hotplace_finder.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_ASSET_PATHS = "\"hotplace_finder/Preview Content\"";
+				DEVELOPMENT_TEAM = 5BAWUQG2ZH;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = "hotplace-finder-Info.plist";
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "사용 시 위치 정보 허용";
+				INFOPLIST_KEY_NSLocationAlwaysUsageDescription = "항상 위치 정보 허용";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0.3;
+				PRODUCT_BUNDLE_IDENTIFIER = "automobilist.hotplace-finder";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		10CD53182DB131E800F72289 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9543038053B1D87A6184639D /* Pods-hotplace_finderTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5BAWUQG2ZH;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "automobilist.hotplace-finderTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hotplace_finder.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/hotplace_finder";
+			};
+			name = Debug;
+		};
+		10CD53192DB131E800F72289 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6FE869111580041291F676C6 /* Pods-hotplace_finderTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5BAWUQG2ZH;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.5;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "automobilist.hotplace-finderTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/hotplace_finder.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/hotplace_finder";
+			};
+			name = Release;
+		};
+		10CD531B2DB131E800F72289 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 31BD2F9B392ADCADEE76D6B1 /* Pods-hotplace_finder-hotplace_finderUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5BAWUQG2ZH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "automobilist.hotplace-finderUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = hotplace_finder;
+			};
+			name = Debug;
+		};
+		10CD531C2DB131E800F72289 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C0EDBA0CE565106DEFF0C377 /* Pods-hotplace_finder-hotplace_finderUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 5BAWUQG2ZH;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "automobilist.hotplace-finderUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = hotplace_finder;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		10CD52E92DB131E600F72289 /* Build configuration list for PBXProject "hotplace_finder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10CD53122DB131E800F72289 /* Debug */,
+				10CD53132DB131E800F72289 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10CD53142DB131E800F72289 /* Build configuration list for PBXNativeTarget "hotplace_finder" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10CD53152DB131E800F72289 /* Debug */,
+				10CD53162DB131E800F72289 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10CD53172DB131E800F72289 /* Build configuration list for PBXNativeTarget "hotplace_finderTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10CD53182DB131E800F72289 /* Debug */,
+				10CD53192DB131E800F72289 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		10CD531A2DB131E800F72289 /* Build configuration list for PBXNativeTarget "hotplace_finderUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				10CD531B2DB131E800F72289 /* Debug */,
+				10CD531C2DB131E800F72289 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		106B49462DF5D92C00970509 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/googleads/swift-package-manager-google-mobile-ads";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 12.5.0;
+			};
+		};
+		1088C0C02DE5F5AC00E6D798 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/kakao/kakao-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.24.2;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		106B49472DF5D92C00970509 /* GoogleMobileAds */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 106B49462DF5D92C00970509 /* XCRemoteSwiftPackageReference "swift-package-manager-google-mobile-ads" */;
+			productName = GoogleMobileAds;
+		};
+		1088C0C12DE5F5AC00E6D798 /* KakaoSDK */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1088C0C02DE5F5AC00E6D798 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDK;
+		};
+		1088C0C32DE5F5AC00E6D798 /* KakaoSDKAuth */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1088C0C02DE5F5AC00E6D798 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKAuth;
+		};
+		1088C0C52DE5F5AC00E6D798 /* KakaoSDKCert */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1088C0C02DE5F5AC00E6D798 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKCert;
+		};
+		1088C0C72DE5F5AC00E6D798 /* KakaoSDKCertCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1088C0C02DE5F5AC00E6D798 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKCertCore;
+		};
+		1088C0C92DE5F5AC00E6D798 /* KakaoSDKCommon */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 1088C0C02DE5F5AC00E6D798 /* XCRemoteSwiftPackageReference "kakao-ios-sdk" */;
+			productName = KakaoSDKCommon;
+		};
+/* End XCSwiftPackageProductDependency section */
+	};
+	rootObject = 10CD52E62DB131E600F72289 /* Project object */;
+}
