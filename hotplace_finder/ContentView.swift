@@ -128,6 +128,20 @@ struct ContentView: View {
         .onAppear {
             viewModel.fetchPlaces()
             viewModel.requestUserLocation()
+            
+            // 🔄 Firebase 문서 구조 마이그레이션 (개발용 - 수동 실행)
+            #if DEBUG
+            // 앱 시작 시 자동 마이그레이션 (필요시 주석 해제)
+            // DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+            //     viewModel.migrateFirebaseDocumentStructure { success in
+            //         if success {
+            //             print("🎉 Firebase 문서 구조 마이그레이션 완료")
+            //         } else {
+            //             print("❌ Firebase 문서 구조 마이그레이션 실패")
+            //         }
+            //     }
+            // }
+            #endif
 
             DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
                 isLoading = false

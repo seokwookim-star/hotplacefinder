@@ -295,22 +295,25 @@ class hotplace_import_firebase: NSObject, ObservableObject, CLLocationManagerDel
                 let storageRef = Storage.storage().reference().child("images/\(fileName)")
                 
                 storageRef.putData(imageData, metadata: nil) { metadata, error in
-                    defer { group.leave() }
-                    
                     if let error = error {
                         print("❌ Firebase Storage 업로드 실패: \(error.localizedDescription)")
                         uploadFailed = true
+                        group.leave() // ❌ 실패 시에만 leave
                         return
                     }
                     
                     storageRef.downloadURL { url, error in
+                        defer { group.leave() } // ✅ downloadURL 완료 후 leave
+                        
                         guard let downloadURL = url else {
                             print("❌ 다운로드 URL 가져오기 실패")
                             uploadFailed = true
                             return
                         }
                         
+                        // ✅ URL을 배열에 추가
                         uploadedUrls.append(downloadURL.absoluteString)
+                        print("✅ 이미지 URL 추가됨: \(downloadURL.absoluteString)")
                     }
                 }
             }
@@ -322,6 +325,9 @@ class hotplace_import_firebase: NSObject, ObservableObject, CLLocationManagerDel
                     completion(false)
                     return
                 }
+                
+                print("🎯 업로드된 이미지 수: \(uploadedUrls.count)")
+                print("🎯 업로드된 URL들: \(uploadedUrls)")
                 
                 let categoryToUse = (customCategory?.isEmpty == false) ? customCategory! : self.selectedCategory
                 let docId = "\(location.latitude)_\(location.longitude)_\(categoryToUse)"
@@ -345,14 +351,40 @@ class hotplace_import_firebase: NSObject, ObservableObject, CLLocationManagerDel
                     }
                     
                     if let document = snapshot, document.exists {
-                        // 🔄 기존 문서에 업데이트
+                        // 🔄 기존 문서에 업데이트 - 안전한 배열 병합 방식
+                        guard let existingData = document.data() else {
+                            print("❌ 기존 문서 데이터를 가져올 수 없음")
+                            completion(false)
+                            return
+                        }
+                        
+                        // 🔍 기존 배열 데이터 백업 (빈 배열이 아닌 경우만)
+                        let existingImageUrls = existingData["imageUrls"] as? [String] ?? []
+                        let existingTimestamps = existingData["timestamps"] as? [Timestamp] ?? []
+                        let existingTakenAtList = existingData["takenAtList"] as? [Timestamp] ?? []
+                        let existingTitles = existingData["titles"] as? [String] ?? []
+                        let existingDescriptions = existingData["descriptions"] as? [String] ?? []
+                        let existingUserIDs = existingData["userIDs"] as? [String] ?? []
+                        
+                        // 🔄 새로운 데이터와 기존 데이터 병합
+                        let finalImageUrls = existingImageUrls.isEmpty ? uploadedUrls : (existingImageUrls + uploadedUrls)
+                        let finalTimestamps = existingTimestamps.isEmpty ? timestamps : (existingTimestamps + timestamps)
+                        let finalTakenAtList = existingTakenAtList.isEmpty ? takenAtList : (existingTakenAtList + takenAtList)
+                        let finalTitles = existingTitles.isEmpty ? titles : (existingTitles + titles)
+                        let finalDescriptions = existingDescriptions.isEmpty ? descriptions : (existingDescriptions + descriptions)
+                        let finalUserIDs = existingUserIDs.isEmpty ? userIDs : (existingUserIDs + userIDs)
+                        
+                        print("🔍 기존 데이터 개수 - imageUrls: \(existingImageUrls.count), timestamps: \(existingTimestamps.count), takenAtList: \(existingTakenAtList.count)")
+                        print("🎯 새로운 데이터 개수 - imageUrls: \(uploadedUrls.count), timestamps: \(timestamps.count), takenAtList: \(takenAtList.count)")
+                        print("✅ 최종 병합 데이터 개수 - imageUrls: \(finalImageUrls.count), timestamps: \(finalTimestamps.count), takenAtList: \(finalTakenAtList.count)")
+                        
                         docRef.updateData([
-                            "imageUrls": FieldValue.arrayUnion(uploadedUrls),
-                            "timestamps": FieldValue.arrayUnion(timestamps),
-                            "takenAtList": FieldValue.arrayUnion(takenAtList),
-                            "titles": FieldValue.arrayUnion(titles),
-                            "descriptions": FieldValue.arrayUnion(descriptions),
-                            "userIDs": FieldValue.arrayUnion(userIDs)
+                            "imageUrls": finalImageUrls,
+                            "timestamps": finalTimestamps,
+                            "takenAtList": finalTakenAtList,
+                            "titles": finalTitles,
+                            "descriptions": finalDescriptions,
+                            "userIDs": finalUserIDs
                         ]) { err in
                             if let err = err {
                                 print("❌ Firestore 업데이트 실패: \(err)")
@@ -775,6 +807,61 @@ class hotplace_import_firebase: NSObject, ObservableObject, CLLocationManagerDel
 //            }
 //        }
 //    }
+    
+    // 🔄 Firebase 문서 구조 마이그레이션 함수
+    func migrateFirebaseDocumentStructure(completion: @escaping (Bool) -> Void) {
+        let db = Firestore.firestore()
+        
+        db.collection("locations").getDocuments { snapshot, error in
+            if let error = error {
+                print("❌ 마이그레이션 중 오류: \(error.localizedDescription)")
+                completion(false)
+                return
+            }
+            
+            guard let documents = snapshot?.documents else {
+                print("❌ 문서를 찾을 수 없음")
+                completion(false)
+                return
+            }
+            
+            let group = DispatchGroup()
+            var migrationCount = 0
+            
+            for document in documents {
+                let data = document.data()
+                
+                // 🔍 기존 단일 이미지 필드 확인
+                if let singleImageUrl = data["imageUrl"] as? String {
+                    group.enter()
+                    
+                    // 🔄 단일 이미지를 배열로 변환
+                    let updatedData: [String: Any] = [
+                        "imageUrls": [singleImageUrl],
+                        "imageUrl": FieldValue.delete() // 기존 필드 삭제
+                    ]
+                    
+                    document.reference.updateData(updatedData) { error in
+                        defer { group.leave() }
+                        
+                        if let error = error {
+                            print("❌ 문서 \(document.documentID) 마이그레이션 실패: \(error.localizedDescription)")
+                        } else {
+                            migrationCount += 1
+                            print("✅ 문서 \(document.documentID) 마이그레이션 완료")
+                        }
+                    }
+                }
+            }
+            
+            group.notify(queue: .main) {
+                print("🎉 마이그레이션 완료: \(migrationCount)개 문서 변환")
+                self.fetchPlaces() // 데이터 새로고침
+                completion(true)
+            }
+        }
+    }
+    
     func deleteImageFromFirebase(placeId: String, imageUrl: String, completion: @escaping (Bool) -> Void) {
         let db = Firestore.firestore()
         let storage = Storage.storage()
@@ -784,49 +871,100 @@ class hotplace_import_firebase: NSObject, ObservableObject, CLLocationManagerDel
             guard let data = snapshot?.data(),
                   var imageUrls = data["imageUrls"] as? [String],
                   var timestamps = data["timestamps"] as? [Timestamp],
+                  var takenAtList = data["takenAtList"] as? [Timestamp],
+                  var titles = data["titles"] as? [String],
+                  var descriptions = data["descriptions"] as? [String],
+                  var userIDs = data["userIDs"] as? [String],
                   let index = imageUrls.firstIndex(of: imageUrl) else {
                 print("❌ 이미지 삭제 실패: 데이터 불일치")
                 completion(false)
                 return
             }
             
-            // 🔹 Storage 경로 추출
-            let url = URL(string: imageUrl)
-            let encodedPath = url?.absoluteString
-                .components(separatedBy: "/o/").last?
-                .components(separatedBy: "?").first
+            print("🎯 삭제할 이미지 인덱스: \(index)")
+            print("🎯 삭제 전 데이터 개수 - imageUrls: \(imageUrls.count), timestamps: \(timestamps.count), takenAtList: \(takenAtList.count), titles: \(titles.count), descriptions: \(descriptions.count), userIDs: \(userIDs.count)")
             
-            guard let decodedPath = encodedPath?.removingPercentEncoding else {
-                print("❌ 경로 디코딩 실패")
-                completion(false)
-                return
+            // 🔹 Storage 경로 추출 - 개선된 방식
+            print("🔍 원본 URL: \(imageUrl)")
+            
+            // 방법 1: Firebase Storage URL에서 경로 추출
+            let storagePath: String
+            if imageUrl.contains("/o/") {
+                // Firebase Storage URL 형식: https://.../o/images%2Ffilename.jpg?alt=media&token=...
+                let components = imageUrl.components(separatedBy: "/o/")
+                if components.count > 1 {
+                    let pathComponent = components[1].components(separatedBy: "?").first ?? ""
+                    storagePath = pathComponent.removingPercentEncoding ?? pathComponent
+                    print("🔍 추출된 Storage 경로: \(storagePath)")
+                } else {
+                    print("❌ Firebase Storage URL 형식이 아님")
+                    completion(false)
+                    return
+                }
+            } else {
+                // 직접 경로인 경우
+                storagePath = imageUrl
+                print("🔍 직접 경로 사용: \(storagePath)")
             }
             
-            let imageRef = storage.reference(withPath: decodedPath)
+            let imageRef = storage.reference(withPath: storagePath)
+            print("🎯 Storage 참조 생성: \(imageRef.fullPath)")
             
             // 🔸 1. Storage 삭제
             imageRef.delete { err in
                 if let err = err {
-                    print("❌ Storage 삭제 실패: \(err.localizedDescription)")
+                    print("❌ Storage 이미지 삭제 실패!")
+                    print("🔍 에러 코드: \(err._code)")
+                    print("🔍 에러 설명: \(err.localizedDescription)")
+                    print("🔍 에러 도메인: \(err._domain)")
+                    print("🔍 Storage 경로: \(storagePath)")
+                    print("🔍 Storage 참조: \(imageRef.fullPath)")
+                    
+                    // 🔍 Storage 파일 존재 여부 확인
+                    imageRef.getMetadata { metadata, error in
+                        if let error = error {
+                            print("🔍 파일 존재 여부 확인 실패: \(error.localizedDescription)")
+                        } else if let metadata = metadata {
+                            print("🔍 파일 존재함 - 크기: \(metadata.size) bytes")
+                        } else {
+                            print("🔍 파일이 존재하지 않음")
+                        }
+                    }
+                    
                     completion(false)
                     return
                 }
                 
                 print("✅ Storage 이미지 삭제 완료")
+                print("🎯 삭제된 파일 경로: \(storagePath)")
                 
-                // 🔸 2. Firestore에서 배열 동기화
-                imageUrls.remove(at: index)
-                timestamps.remove(at: index)
+                // 🔸 2. Firestore에서 모든 관련 배열 데이터 동기화
+                // 배열 길이를 맞춰서 동일한 인덱스의 데이터를 모두 삭제
+                if index < imageUrls.count { imageUrls.remove(at: index) }
+                if index < timestamps.count { timestamps.remove(at: index) }
+                if index < takenAtList.count { takenAtList.remove(at: index) }
+                if index < titles.count { titles.remove(at: index) }
+                if index < descriptions.count { descriptions.remove(at: index) }
+                if index < userIDs.count { userIDs.remove(at: index) }
                 
-                docRef.updateData([
+                print("🎯 삭제 후 데이터 개수 - imageUrls: \(imageUrls.count), timestamps: \(timestamps.count), takenAtList: \(takenAtList.count), titles: \(titles.count), descriptions: \(descriptions.count), userIDs: \(userIDs.count)")
+                
+                // 🔸 3. 모든 배열을 한 번에 업데이트
+                let updateData: [String: Any] = [
                     "imageUrls": imageUrls,
-                    "timestamps": timestamps
-                ]) { err in
+                    "timestamps": timestamps,
+                    "takenAtList": takenAtList,
+                    "titles": titles,
+                    "descriptions": descriptions,
+                    "userIDs": userIDs
+                ]
+                
+                docRef.updateData(updateData) { err in
                     if let err = err {
                         print("❌ Firestore 업데이트 실패: \(err.localizedDescription)")
                         completion(false)
                     } else {
-                        print("✅ Firestore 업데이트 완료")
+                        print("✅ Firestore 모든 데이터 동기화 완료")
                         self.fetchPlaces()
                         completion(true)
                     }
@@ -834,6 +972,85 @@ class hotplace_import_firebase: NSObject, ObservableObject, CLLocationManagerDel
             }
         }
     }
+    
+    // 🔧 데이터 일관성 정리 함수
+    func cleanupInconsistentData(completion: @escaping (Bool) -> Void) {
+        let db = Firestore.firestore()
+        
+        db.collection("locations").getDocuments { snapshot, error in
+            if let error = error {
+                print("❌ 데이터 정리 중 오류: \(error.localizedDescription)")
+                completion(false)
+                return
+            }
+            
+            guard let documents = snapshot?.documents else {
+                print("❌ 문서를 찾을 수 없음")
+                completion(false)
+                return
+            }
+            
+            let group = DispatchGroup()
+            var cleanupCount = 0
+            
+            for document in documents {
+                let data = document.data()
+                
+                // 🔍 배열 필드들의 길이 확인
+                let imageUrls = data["imageUrls"] as? [String] ?? []
+                let timestamps = data["timestamps"] as? [Timestamp] ?? []
+                let takenAtList = data["takenAtList"] as? [Timestamp] ?? []
+                let titles = data["titles"] as? [String] ?? []
+                let descriptions = data["descriptions"] as? [String] ?? []
+                let userIDs = data["userIDs"] as? [String] ?? []
+                
+                // 🔍 가장 긴 배열을 기준으로 다른 배열들을 맞춤
+                let maxLength = max(imageUrls.count, timestamps.count, takenAtList.count, titles.count, descriptions.count, userIDs.count)
+                
+                if maxLength > 0 && (imageUrls.count != maxLength || timestamps.count != maxLength || takenAtList.count != maxLength || titles.count != maxLength || descriptions.count != maxLength || userIDs.count != maxLength) {
+                    group.enter()
+                    
+                    print("🔧 문서 \(document.documentID) 데이터 정리 필요 - 최대 길이: \(maxLength)")
+                    print("🔧 현재 길이 - imageUrls: \(imageUrls.count), timestamps: \(timestamps.count), takenAtList: \(takenAtList.count), titles: \(titles.count), descriptions: \(descriptions.count), userIDs: \(userIDs.count)")
+                    
+                    // 🔧 배열 길이를 맞춤 (빈 값으로 채움)
+                    let normalizedImageUrls = Array(imageUrls.prefix(maxLength)) + Array(repeating: "", count: max(0, maxLength - imageUrls.count))
+                    let normalizedTimestamps = Array(timestamps.prefix(maxLength)) + Array(repeating: Timestamp(date: Date()), count: max(0, maxLength - timestamps.count))
+                    let normalizedTakenAtList = Array(takenAtList.prefix(maxLength)) + Array(repeating: Timestamp(date: Date()), count: max(0, maxLength - takenAtList.count))
+                    let normalizedTitles = Array(titles.prefix(maxLength)) + Array(repeating: "", count: max(0, maxLength - titles.count))
+                    let normalizedDescriptions = Array(descriptions.prefix(maxLength)) + Array(repeating: "", count: max(0, maxLength - descriptions.count))
+                    let normalizedUserIDs = Array(userIDs.prefix(maxLength)) + Array(repeating: "", count: max(0, maxLength - userIDs.count))
+                    
+                    let updateData: [String: Any] = [
+                        "imageUrls": normalizedImageUrls,
+                        "timestamps": normalizedTimestamps,
+                        "takenAtList": normalizedTakenAtList,
+                        "titles": normalizedTitles,
+                        "descriptions": normalizedDescriptions,
+                        "userIDs": normalizedUserIDs
+                    ]
+                    
+                    document.reference.updateData(updateData) { error in
+                        defer { group.leave() }
+                        
+                        if let error = error {
+                            print("❌ 문서 \(document.documentID) 정리 실패: \(error.localizedDescription)")
+                        } else {
+                            cleanupCount += 1
+                            print("✅ 문서 \(document.documentID) 데이터 정리 완료")
+                        }
+                    }
+                }
+            }
+            
+            group.notify(queue: .main) {
+                print("🎉 데이터 정리 완료: \(cleanupCount)개 문서 정리됨")
+                self.fetchPlaces() // 데이터 새로고침
+                completion(true)
+            }
+        }
+    }
+    
     func reportImage(placeId: String, imageUrl: String) {
         let db = Firestore.firestore()
         let placeRef = db.collection("places").document(placeId)

@@ -14,6 +14,30 @@ struct LoginView: View {
         VStack(spacing: 30) {
 
            AppleLoginButton()
+           
+           // 🔄 Firebase 문서 구조 마이그레이션 버튼 (개발용)
+           #if DEBUG
+           Button(action: {
+               // ContentView의 viewModel에 접근하기 위해 간단한 알림
+               let alert = UIAlertController(
+                   title: "Firebase 마이그레이션",
+                   message: "기존 단일 이미지 필드를 배열로 변환합니다. 콘솔을 확인하세요.",
+                   preferredStyle: .alert
+               )
+               alert.addAction(UIAlertAction(title: "확인", style: .default))
+               UIApplication.shared.windows.first?.rootViewController?.present(alert, animated: true)
+           }) {
+               HStack {
+                   Image(systemName: "arrow.triangle.2.circlepath")
+                   Text("Firebase 문서 구조 마이그레이션")
+               }
+               .foregroundColor(.orange)
+               .padding()
+               .background(Color(UIColor.systemGray6))
+               .cornerRadius(8)
+           }
+           #endif
+           
             Button(action: {
                             sendEmail()
                         }) {
