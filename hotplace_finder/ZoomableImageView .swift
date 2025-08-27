@@ -7,7 +7,7 @@ struct ZoomableImageView: View {
     @State private var lastScale: CGFloat = 1.0
 
     var body: some View {
-        AsyncImage(url: imageUrl) { image in
+        OptimizedAsyncImage(url: imageUrl.absoluteString) { image in
             image
                 .resizable()
                 .scaledToFit()
@@ -22,8 +22,6 @@ struct ZoomableImageView: View {
                         }
                 )
                 .animation(.easeInOut(duration: 0.2), value: scale)
-        } placeholder: {
-            ProgressView()
         }
     }
 }

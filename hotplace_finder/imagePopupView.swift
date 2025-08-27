@@ -71,14 +71,12 @@ struct ImagePopupView: View {
                                         TabView(selection: $selectedImageIndex) {
                                             ForEach(selectedImageUrls.indices, id: \.self) { index in
                                                 if let url = URL(string: selectedImageUrls[index]) {
-                                                    AsyncImage(url: url) { image in
+                                                    OptimizedAsyncImage(url: selectedImageUrls[index]) { image in
                                                         image.resizable().scaledToFit()
                                                             .onTapGesture {
                                                                 fullScreenImageUrl = selectedImageUrls[index]
                                                                 showFullScreenImage = true
                                                             }
-                                                    } placeholder: {
-                                                        ProgressView()
                                                     }
                                                     .frame(height: 200)
                                                     .cornerRadius(16)

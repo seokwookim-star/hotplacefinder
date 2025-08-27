@@ -18,6 +18,9 @@
 		106B49482DF5D92C00970509 /* GoogleMobileAds in Frameworks */ = {isa = PBXBuildFile; productRef = 106B49472DF5D92C00970509 /* GoogleMobileAds */; };
 		106B494A2DF6F8F600970509 /* AppleLoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 106B49492DF6F8F600970509 /* AppleLoginButton.swift */; };
 		1083838A2E5CACBE000FBC0B /* MultiImagePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108383892E5CACBE000FBC0B /* MultiImagePicker.swift */; };
+		1083838D2E5DE966000FBC0B /* ImagePreloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1083838C2E5DE966000FBC0B /* ImagePreloader.swift */; };
+		1083838E2E5DE966000FBC0B /* ImageCacheManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1083838B2E5DE966000FBC0B /* ImageCacheManager.swift */; };
+		108383922E5DF820000FBC0B /* ModernLoadingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 108383912E5DF820000FBC0B /* ModernLoadingView.swift */; };
 		1088C0B72DDF71D600E6D798 /* BannerAdView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1088C0B62DDF703400E6D798 /* BannerAdView.swift */; };
 		1088C0B92DE4B83F00E6D798 /* ZoomableImageView .swift in Sources */ = {isa = PBXBuildFile; fileRef = 1088C0B82DE4B80600E6D798 /* ZoomableImageView .swift */; };
 		1088C0BB2DE4BC9900E6D798 /* FullScreenImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1088C0BA2DE4BC9900E6D798 /* FullScreenImageView.swift */; };
@@ -81,6 +84,9 @@
 		106B49492DF6F8F600970509 /* AppleLoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppleLoginButton.swift; sourceTree = "<group>"; };
 		106B494D2DF6FD0400970509 /* hotplace_finder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = hotplace_finder.entitlements; sourceTree = "<group>"; };
 		108383892E5CACBE000FBC0B /* MultiImagePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultiImagePicker.swift; sourceTree = "<group>"; };
+		1083838B2E5DE966000FBC0B /* ImageCacheManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCacheManager.swift; sourceTree = "<group>"; };
+		1083838C2E5DE966000FBC0B /* ImagePreloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImagePreloader.swift; sourceTree = "<group>"; };
+		108383912E5DF820000FBC0B /* ModernLoadingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernLoadingView.swift; sourceTree = "<group>"; };
 		1088C0B62DDF703400E6D798 /* BannerAdView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BannerAdView.swift; sourceTree = "<group>"; };
 		1088C0B82DE4B80600E6D798 /* ZoomableImageView .swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ZoomableImageView .swift"; sourceTree = "<group>"; };
 		1088C0BA2DE4BC9900E6D798 /* FullScreenImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FullScreenImageView.swift; sourceTree = "<group>"; };
@@ -186,6 +192,7 @@
 				10CD52F12DB131E600F72289 /* hotplace_finderApp.swift */,
 				1088C0BC2DE5F11600E6D798 /* mainTabView.swift */,
 				1088C0D32DE7263F00E6D798 /* AppDelegate.swift */,
+				108383912E5DF820000FBC0B /* ModernLoadingView.swift */,
 				1088C0BE2DE5F2F700E6D798 /* LoginView.swift */,
 				109F2F562E0D8688004DE6C9 /* testADview.swift */,
 				1088C0CB2DE5FDCB00E6D798 /* NaverLoginManager.swift */,
@@ -205,6 +212,8 @@
 				10D6CB592E234A68006E8C63 /* datePickerSection.swift */,
 				10CD52F32DB131E600F72289 /* ContentView.swift */,
 				105520442DB4A884001807E7 /* hotplace_import_firebase.swift */,
+				1083838B2E5DE966000FBC0B /* ImageCacheManager.swift */,
+				1083838C2E5DE966000FBC0B /* ImagePreloader.swift */,
 				10CD53202DB14B6600F72289 /* naverMapView.swift */,
 				105520422DB4A7FC001807E7 /* hotplace_struct.swift */,
 				1055204C2DBB8DC0001807E7 /* imagePicker.swift */,
@@ -574,6 +583,8 @@
 				10CD52F42DB131E600F72289 /* ContentView.swift in Sources */,
 				1088C0D02DE5FFF700E6D798 /* KakaoLoginView.swift in Sources */,
 				1088C0BD2DE5F15500E6D798 /* mainTabView.swift in Sources */,
+				1083838D2E5DE966000FBC0B /* ImagePreloader.swift in Sources */,
+				1083838E2E5DE966000FBC0B /* ImageCacheManager.swift in Sources */,
 				1083838A2E5CACBE000FBC0B /* MultiImagePicker.swift in Sources */,
 				109F2F552E097010004DE6C9 /* AccountDeleteView.swift in Sources */,
 				106B494A2DF6F8F600970509 /* AppleLoginButton.swift in Sources */,
@@ -585,6 +596,7 @@
 				109F2F592E169D89004DE6C9 /* loadingView.swift in Sources */,
 				1088C0BB2DE4BC9900E6D798 /* FullScreenImageView.swift in Sources */,
 				10CD52F22DB131E600F72289 /* hotplace_finderApp.swift in Sources */,
+				108383922E5DF820000FBC0B /* ModernLoadingView.swift in Sources */,
 				1088C0BF2DE5F2F700E6D798 /* LoginView.swift in Sources */,
 				1088C0D42DE7263F00E6D798 /* AppDelegate.swift in Sources */,
 			);
@@ -751,7 +763,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = hotplace_finder/hotplace_finder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"hotplace_finder/Preview Content\"";
 				DEVELOPMENT_TEAM = 5BAWUQG2ZH;
 				ENABLE_PREVIEWS = YES;
@@ -787,7 +799,7 @@
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = YES;
 				CODE_SIGN_ENTITLEMENTS = hotplace_finder/hotplace_finder.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 3;
 				DEVELOPMENT_ASSET_PATHS = "\"hotplace_finder/Preview Content\"";
 				DEVELOPMENT_TEAM = 5BAWUQG2ZH;
 				ENABLE_PREVIEWS = YES;

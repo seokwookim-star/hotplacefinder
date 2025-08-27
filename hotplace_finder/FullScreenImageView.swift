@@ -12,28 +12,24 @@ struct FullScreenImageView: View {
         ZStack {
             Color.black.ignoresSafeArea()
 
-            if let url = URL(string: imageUrl) {
-                AsyncImage(url: url) { image in
-                    image
-                        .resizable()
-                        .scaledToFit()
-                        .scaleEffect(scale)
-                        .offset(offset)
-                        .gesture(
-                            MagnificationGesture()
-                                .onChanged { scale = $0 }
-                                .onEnded { _ in
-                                    if scale < 1.0 { scale = 1.0 }
-                                }
-                        )
-                        .gesture(
-                            DragGesture()
-                                .onChanged { offset = $0.translation }
-                                .onEnded { _ in }
-                        )
-                } placeholder: {
-                    ProgressView()
-                }
+            OptimizedAsyncImage(url: imageUrl) { image in
+                image
+                    .resizable()
+                    .scaledToFit()
+                    .scaleEffect(scale)
+                    .offset(offset)
+                    .gesture(
+                        MagnificationGesture()
+                            .onChanged { scale = $0 }
+                            .onEnded { _ in
+                                if scale < 1.0 { scale = 1.0 }
+                            }
+                    )
+                    .gesture(
+                        DragGesture()
+                            .onChanged { offset = $0.translation }
+                            .onEnded { _ in }
+                    )
             }
 
             VStack {
